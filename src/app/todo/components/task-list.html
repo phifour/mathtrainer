@@ -1,0 +1,35 @@
+<h1>Todo tasks ({{todoCount}})</h1>
+
+
+  <!--<li *ngFor="let x of eqn; let i = index">
+    $\frac 14$
+    <app-equation [inputValue]='x' [seq]='i'></app-equation>
+        <br>
+  </li> -->
+
+
+  <li *ngFor="let u of data; let i = index">
+        $\frac 14$
+         <br>
+        <app-equation [inputValue]='u' [seq]='i'></app-equation>
+  </li>
+
+
+
+
+
+
+
+<ul>
+    <li *ngFor="let task of tasks" [class.selected]="task == selectedTask">
+        <a href="javascript:void(0)" (click)="select(task)">
+            {{task.name}}
+            <span [ngSwitch]="task.done">
+                <template [ngSwitchCase]="true">[Done]</template>
+                <template [ngSwitchCase]="false">[Todo]</template>
+            </span>
+        </a>
+    </li>
+</ul>
+
+<task *ngIf="selectedTask" [task]="selectedTask" (statusChanged)="calculateTodoCount()"></task>
