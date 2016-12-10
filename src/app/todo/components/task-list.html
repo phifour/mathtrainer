@@ -1,6 +1,3 @@
-<h1>Todo tasks ({{todoCount}})</h1>
-
-
   <!--<li *ngFor="let x of eqn; let i = index">
     $\frac 14$
     <app-equation [inputValue]='x' [seq]='i'></app-equation>
@@ -8,16 +5,15 @@
   </li> -->
 
 
-  <li *ngFor="let u of data; let i = index">
+<app-mathtest></app-mathtest>
+
+<!--<app-assignment [problem]='hello' [sol1]='dsdsd'></app-assignment>-->
+
+  <!--<li *ngFor="let u of data; let i = index">
         $\frac 14$
          <br>
         <app-equation [inputValue]='u' [seq]='i'></app-equation>
   </li>
-
-
-
-
-
 
 
 <ul>
@@ -30,6 +26,6 @@
             </span>
         </a>
     </li>
-</ul>
+</ul>-->
 
 <task *ngIf="selectedTask" [task]="selectedTask" (statusChanged)="calculateTodoCount()"></task>

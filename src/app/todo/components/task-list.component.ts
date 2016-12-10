@@ -5,6 +5,8 @@ import {TaskService} from "../services/task-service";
 import {TaskComponent} from "./task.component";
 import {EquationComponent} from "./equation.component";
 import {MathService} from '../services/math.service';
+import {MathassignmentComponent} from './mathassignment.component';
+import {MathtestComponent} from './mathtest.component';
 
 
 @Component({
@@ -20,12 +22,14 @@ export class TaskListComponent implements OnInit {
     tasks:Array<Task>;
     eqn:string[];
     data:any[];
+    hello:string;
 
     constructor(private _taskService:TaskService, private mathservice: MathService) {
         this.tasks = _taskService.getTasks();
         this.calculateTodoCount();
         this.eqn = ["E=mc^2", "\\Delta \\phi = -4 \\pi \\rho", "-\\Delta"];
         this.data = [];
+        this.hello = "This is a \\beta - problem";
         this.getfirebase();
     }
 

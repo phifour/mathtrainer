@@ -2,11 +2,17 @@ import {Component} from "@angular/core";
 import {OnInit} from "@angular/core";
 
 @Component({
-    templateUrl: './app/about/components/about.html'
+    template: `
+    <h1>Score List</h1>
+    
+    `
 })
 export class AboutComponent implements OnInit {
 
     ngOnInit() {
 
     }
+
+
+
 }

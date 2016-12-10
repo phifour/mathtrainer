@@ -22,7 +22,20 @@ export class MathService {
     const body = JSON.stringify(user);
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('https://flickering-inferno-6917.firebaseio.com/test.json', body, {
+    //return this.http.post('https://mathtrainer-3d393.firebaseio.com/highscore.json', body, {
+    return this.http.post('https://flickering-inferno-6917.firebaseio.com/highscore.json', body, {
+      headers: headers
+    })
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
+  uploadassignment(user: any) {
+    const body = JSON.stringify(user);
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    //return this.http.post('https://mathtrainer-3d393.firebaseio.com/highscore.json', body, {
+    return this.http.post('https://flickering-inferno-6917.firebaseio.com/assignment.json', body, {
       headers: headers
     })
       .map((data: Response) => data.json())

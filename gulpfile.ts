@@ -56,9 +56,17 @@ gulp.task("libs", () => {
             'reflect-metadata/Reflect.js',
             'rxjs/**/*.js',
             'zone.js/dist/**',
+            'mathjax/**',
             '@angular/**/bundles/**'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
+});
+
+gulp.task("dependencies", () => {
+    return gulp.src([
+            '/dependencies/*.*',
+        ], {cwd: "src/**"}) /* Glob required here. */
+        .pipe(gulp.dest("build/dependencies"));
 });
 
 /**
@@ -76,6 +84,6 @@ gulp.task('watch', function () {
 /**
  * Build the project.
  */
-gulp.task("build", ['compile', 'resources', 'libs'], () => {
+gulp.task("build", ['compile', 'resources', 'libs','dependencies'], () => {
     console.log("Building the project ...");
 });
