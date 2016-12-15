@@ -1,8 +1,8 @@
 Mathtrainer
 =================================
 
-Mathtrainer is to create and exchange math assignments.
-The app is written in Angular2 and Typescript and ueses MathJax in order to reder equations (based on LaTex).
+Mathtrainer is an app for creating and exchange of math assignments.
+The app is written in Angular2 and Typescript and ueses MathJax in order to render equations (based on LaTex).
 User can do assignments and create their own assignment. 
 
 It uses the following concepts:

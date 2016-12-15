@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'form-validation',
@@ -45,7 +46,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
       </div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-primary" [disabled]="!complexForm.valid">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!complexForm.valid">Submit</button>
       </div>
     </form>
   </div>
@@ -54,7 +55,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class FormValidationComponent {
   complexForm : FormGroup;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private router: Router) {
     this.complexForm = fb.group({
       'firstName' : [null, Validators.required],
       'lastName': [null,  Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
@@ -70,5 +71,6 @@ export class FormValidationComponent {
 
   submitForm(value: any) {
     console.log(value);
+    this.router.navigate(['/listofassignments']);
   }
 }

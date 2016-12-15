@@ -24,6 +24,7 @@ import { FormValidationComponent } from "./formvalidation.component";
     </div>
 
     <div *ngIf="testcomplete" class="container">
+    <div class="well">
     <h1>Your total Score: {{totalscore}}</h1>
     <table class="table table-hover">
         <thead>
@@ -39,8 +40,9 @@ import { FormValidationComponent } from "./formvalidation.component";
         </tr>
         </tbody>
     </table>
+    </div>
 
-    <h2>Your Feedback helps us to improve the quality of Mathtrainer</h2>
+    <h3>Your Feedback helps us to improve the quality of Mathtrainer</h3>
     <button type="button" (click)="survey()" class="btn btn-primary btn-block">Continue to survey</button>
     <button type="button" (click)="continue()" class="btn btn-primary btn-block">Continue without survey</button>
     </div>
