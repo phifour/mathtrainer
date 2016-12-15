@@ -63,12 +63,7 @@ import {AssignmentComponent} from "./newassignment.component";
 
     <div *ngIf="mathassignments.length<1" class="alert alert-danger">You need to add at least one problemset.</div>
 
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block" [disabled]="check(complexForm.valid,mathassignments.length)">Submit</button>
-    </div>
-
-    <button type="button" (click)="uploadassignment()" class="btn btn-primary btn-block">Upload to Mathtrainer</button>
+    <button type="button" (click)="uploadassignment()" class="btn btn-primary btn-block" [disabled]="check(complexForm.valid,mathassignments.length)">Upload to Mathtrainer</button>
 
     </div>
 

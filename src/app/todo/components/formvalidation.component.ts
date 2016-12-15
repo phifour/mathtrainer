@@ -38,15 +38,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
       <div class="form-group">
         <label>Activities</label>
       </div>
-      <label class="checkbox-inline">
-        <input type="checkbox" value="hiking" name="hiking" [formControl]="complexForm.controls['hiking']"> Hiking
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" value="swimming" name="swimming" [formControl]="complexForm.controls['swimming']"> Swimming
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" value="running" name="running" [formControl]="complexForm.controls['running']"> Running
-      </label>
+
+      <div class="form-group">
+        <label for="comment">Your Feedback:</label>
+        <textarea class="form-control" rows="5" [formControl]="complexForm.controls['feedback']"></textarea>
+      </div>
+
       <div class="form-group">
         <button type="submit" class="btn btn-primary" [disabled]="!complexForm.valid">Submit</button>
       </div>
@@ -62,9 +59,7 @@ export class FormValidationComponent {
       'firstName' : [null, Validators.required],
       'lastName': [null,  Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
       'degree' : [null, Validators.required],
-      'hiking' : [false],
-      'running' : [false],
-      'swimming' : [false]
+      'feedback' : [null, Validators.required]
     });
     console.log(this.complexForm);
     this.complexForm.valueChanges.subscribe( (form: any) => {

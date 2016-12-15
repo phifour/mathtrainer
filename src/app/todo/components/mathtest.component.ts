@@ -10,10 +10,12 @@ import { FormValidationComponent } from "./formvalidation.component";
     selector: 'app-mathtest',
     template: `
     <div *ngIf="!testcomplete" class="container">
-    <h2>{{nameofassignment}}</h2>
+        <div class="center">
+            <h2>{{nameofassignment}}</h2>
+        </div>
     <div *ngFor="let x of mathassignments; let i = index; trackBy:trackByIndex">
         <div class="well">
-            <app-assignment [(mathassignment)]="mathassignments[i]" [mode]="0"></app-assignment>
+            <app-assignment [(mathassignment)]="mathassignments[i]" [pos]="i" [mode]="0"></app-assignment>
         </div>
     </div>
     

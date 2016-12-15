@@ -6,7 +6,8 @@ import { MathAssignment } from "../models/mathassignment";
     selector: 'app-assignment',
     template: `
     <div *ngIf="mode==0" class="container">
-            <h4>Problemset {{pos}} :{{mathassignment['problem']}} </h4>
+            <h4>Problemset {{pos}}</h4>
+            <h4>{{mathassignment['problem']}}</h4>
             <ul class="list-group">
             <li class="list-group-item"><input type="checkbox" [(ngModel)]="mathassignment.ua1">{{mathassignment['sol1']}}</li>
             <li class="list-group-item"><input type="checkbox" [(ngModel)]="mathassignment.ua2">{{mathassignment['sol2']}} </li>
@@ -16,7 +17,8 @@ import { MathAssignment } from "../models/mathassignment";
     </div>
 
     <div *ngIf="mode==1" class="container">
-            <h4>Problemset {{pos}} :{{mathassignment['problem']}} </h4>
+            <h4>Problemset {{pos}}</h4>
+            <h4>{{mathassignment['problem']}}</h4>
             <ul class="list-group">
             <li *ngIf="mathassignment['a1']==true" class="list-group-item list-group-item-success">{{mathassignment['sol1']}}</li>
             <li *ngIf="mathassignment['a1']==false||undefined" class="list-group-item list-group-item-danger">{{mathassignment['sol1']}}</li>

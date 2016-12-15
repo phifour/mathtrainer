@@ -1,7 +1,16 @@
-Angular2 with TypeScript and Gulp
+Mathtrainer
 =================================
 
-A basic Angular2 application with Gulp as build system.
+Mathtrainer is to create and exchange math assignments.
+The app is written in Angular2 and Typescript and ueses MathJax in order to reder equations (based on LaTex).
+User can do assignments and create their own assignment. 
+
+It uses the following concepts:
+
+-)Third party package implementation MathJax
+-)Firebase as backend
+-)Angular2 Form validation
+
 
 #### 1. Prerequisites
 
@@ -31,11 +40,9 @@ A basic Angular2 application with Gulp as build system.
 
 Clone the repository:
 
-> git clone https://github.com/kolorobot/angular2-typescript-gulp.git
+> git clone https://github.com/phifour/mathtrainer.git mathtrainer
 
-Navigate to `angular2-typescript-gulp` directory:
-
-> cd angular2-typescript-gulp
+> cd mathtrainer
 
 #### 3. Installing dependencies
 
@@ -53,15 +60,11 @@ Build the project by running the following command:
 
 `build` directory will be created during the build
 
-#### 5. Starting the application
-
+#### 5. Starting mathtrainer
 Start the application by running the following command:
 
 > npm start
 
 The application will be displayed in the browser.
+(http://localhost:8000/)
 
-Resources
----------
-
-- [A step-by-step tutorial](http://blog.codeleak.pl/2016/03/quickstart-angular2-with-typescript-and.html)
