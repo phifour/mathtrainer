@@ -9,6 +9,7 @@ It uses the following concepts:
 
 -)Third party package implementation MathJax
 -)Firebase as backend
+-)Supports offline functionality
 -)Angular2 Form validation
 
 

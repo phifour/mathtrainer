@@ -33,6 +33,7 @@
     "firebase": "^3.6.1",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.12",
+    "sw-precache": "^4.2.1",
     "systemjs": "0.19.27",
     "zone.js": "^0.6.23"
   },
@@ -41,12 +42,14 @@
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-strip-debug": "^1.1.0",
     "gulp-tslint": "^6.1.1 ",
     "gulp-typescript": "^2.13.6",
+    "gulp-uglifyjs": "^0.6.2",
     "lite-server": "^2.2.2",
+    "ts-node": "^1.3.0",
     "tslint": "^3.5.0",
     "typescript": "^2.0.2",
-    "typings": "^1.3.3",
-    "ts-node": "^1.3.0"
+    "typings": "^1.3.3"
   }
 }

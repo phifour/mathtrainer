@@ -6,6 +6,9 @@ const tsc = require("gulp-typescript");
 const sourcemaps = require('gulp-sourcemaps');
 const tsProject = tsc.createProject("tsconfig.json");
 const tslint = require('gulp-tslint');
+const swPrecache = require('sw-precache');
+const uglifyify = require('gulp-uglifyjs');
+const stripDebug = require('gulp-strip-debug');
 
 /**
  * Remove build directory.
@@ -34,8 +37,13 @@ gulp.task("compile", ["tslint"], () => {
         .pipe(tsc(tsProject));
     return tsResult.js
         .pipe(sourcemaps.write(".", {sourceRoot: '/src'}))
+        // .pipe(uglifyify())
+        // .pipe(stripDebug())
         .pipe(gulp.dest("build"));
 });
+
+
+
 
 /**
  * Copy all resources that are not TypeScript files into build directory.
@@ -81,9 +89,18 @@ gulp.task('watch', function () {
     });
 });
 
+
+gulp.task('generate-service-worker', function (callback) {
+    swPrecache.write('build/my-service-worker.js', {
+        staticFileGlobs: ['src/index.html','src/systemjs.config.js','src/app/**/*','src/dependencies/*.js'],
+        stripPrefix: 'src'
+    }, callback);
+});
+
+
 /**
  * Build the project.
  */
-gulp.task("build", ['compile', 'resources', 'libs','dependencies'], () => {
+gulp.task("build", ['compile', 'resources', 'libs','dependencies', 'generate-service-worker'], () => {
     console.log("Building the project ...");
 });
