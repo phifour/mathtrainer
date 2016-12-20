@@ -18,6 +18,20 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AddassignmentComponent} from "./todo/components/addassignment.component";
 import {SurveyComponent} from "./todo/components/survey.component";
+import { AgmCoreModule } from 'angular2-google-maps/core';
+// import { AngularFireModule } from 'angularfire2';
+
+
+
+// Must export the config
+// export const firebaseConfig = {
+//   apiKey: 'AIzaSyAjHkePzrBpZVIA6EkBgMmExjmTDFacfz4',
+//   authDomain: 'flickering-inferno-6917',
+//   databaseURL: 'https://flickering-inferno-6917.firebaseio.com/',
+//   storageBucket: ''
+// };
+
+
 
 
 @NgModule({
@@ -26,7 +40,12 @@ import {SurveyComponent} from "./todo/components/survey.component";
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        routing
+        routing,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyDzYFOCzw9rhp161yZx2xjbX5Du3wJtH4I'
+        })
+        // AngularFireModule.initializeApp(firebaseConfig)
+
     ],
     declarations: [
         AppComponent,

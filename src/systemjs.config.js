@@ -18,8 +18,15 @@
             '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
             // other libraries
-            'rxjs': 'npm:rxjs'
+            'rxjs': 'npm:rxjs',
+            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+            'angular2-google-maps/core': 'npm:angular2-google-maps/core/core.umd.js',
+            //'ts':                         'npm:plugin-typescript@4.0.10/lib/plugin.js',
+             //'typescript':                 'npm:typescript@2.0.2/lib/typescript.js',
+            'angularfire2':'npm:angularfire2/',
+            'firebase':'npm:firebase/',
         },
+
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
             app: {
@@ -28,7 +35,35 @@
             },
             rxjs: {
                 defaultExtension: 'js'
-            }
+            },
+            'angular-in-memory-web-api': { main: './index.js', defaultExtension: 'js' },
+
+      angularfire2: {
+        main: 'angularfire2.js'
+      },
+      firebase: {
+        main: 'firebase.js'
+      }
+
+
+
+
+
+
+            // 'angular2-google-maps/core':{
+            //      defaultExtension: 'js' 
+            // }
+
+            // 'angular2-in-memory-web-api': {
+            //     main: './index.js',
+            //     defaultExtension: 'js'
+            // },
+            // angularfire2: {
+            //     main: 'angularfire2.js'
+            // },
+            // firebase: {
+            //     main: 'firebase.js'
+            // }
         }
     });
 })(this);

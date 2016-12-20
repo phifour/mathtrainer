@@ -65,7 +65,10 @@ gulp.task("libs", () => {
             'rxjs/**/*.js',
             'zone.js/dist/**',
             'mathjax/**',
-            '@angular/**/bundles/**'
+            '@angular/**/bundles/**',
+            'angularfire2/**/*',
+            'firebase/**',
+            'angular2-google-maps/**/*'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });

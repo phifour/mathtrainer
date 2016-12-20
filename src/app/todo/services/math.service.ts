@@ -42,6 +42,30 @@ export class MathService {
       .catch(this.handleError);
   }
 
+
+  uploadevent(evnt: any) {
+    const body = JSON.stringify(evnt);
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    //return this.http.post('https://mathtrainer-3d393.firebaseio.com/highscore.json', body, {
+    return this.http.post('https://flickering-inferno-6917.firebaseio.com/histevents.json', body, {
+      headers: headers
+    })
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
+  deletevent(key: string) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    //return this.http.post('https://mathtrainer-3d393.firebaseio.com/highscore.json', body, {
+    return this.http.delete('https://flickering-inferno-6917.firebaseio.com/histevents/'+key+'.json', {
+      headers: headers
+    })
+      .map((data: Response) => data.json())
+      .catch(this.handleError);
+  }
+
     testfoursquare() {
         var url = "https://api.foursquare.com/v2/venues/search?v=20130815&&";
         var query = "&query=sushi";
@@ -63,6 +87,28 @@ export class MathService {
            .map(res => res.json())
             .catch(this.handleError);
   }
+
+  public getcoordinates(adress:string) {
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });//, { headers: headers }
+    return this.http
+      .get('https://maps.googleapis.com/maps/api/geocode/json?address='+ adress +'&key=AIzaSyC4HvQrbLX5ez5-Vf92VTsC7P0HLMWjxtk')
+           .map(res => res.json())
+            .catch(this.handleError);
+  }
+
+
+// delete(id: number): Promise<void> {
+//   const url = `${this.heroesUrl}/${id}`;
+//   return this.http.delete(url, {headers: this.headers})
+//     .toPromise()
+//     .then(() => null)
+//     .catch(this.handleError);
+// 
+
+
+//
 
     getPhotoURL(id:number) {
         var photourl = 'https://api.foursquare.com/v2/venues/' + id + '/photos?&&';
